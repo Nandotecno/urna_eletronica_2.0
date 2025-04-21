@@ -1,0 +1,79 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletrônica Simulador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="urna-container">
+        <div class="urna">
+            <div class="tela">
+                <div class="tela-conteudo">
+                    <!-- Conteúdo dinâmico da tela -->
+                    <div class="aviso-inicial">
+                        <h1>JUSTIÇA ELEITORAL</h1>
+                    </div>
+
+                    <div class="instrucao pisca">SEU VOTO PARA</div>
+
+                    <div class="cargo">PRESIDENTE</div>
+
+                    <div class="entrada-numeros">
+                        Número:
+                        <div class="numero" id="num1"></div>
+                        <div class="numero" id="num2"></div>
+                    </div>
+
+                    <div class="candidato-info">
+                        <!-- Preenchido via JS -->
+                    </div>
+
+                    <div class="aviso-rodape">
+                        <p>Aperte a tecla:</p>
+                        <p>CONFIRMA para CONFIRMAR este voto</p>
+                        <p>CORRIGE para REINICIAR este voto</p>
+                    </div>
+
+                     <div class="voto-branco-nulo">
+                        <!-- Mensagens de voto branco/nulo -->
+                    </div>
+
+                     <div class="fim" id="fim">FIM</div>
+
+                </div>
+            </div>
+            <div class="teclado">
+                <div class="teclado-numerico">
+                    <button onclick="cliqueNumero('1')">1</button>
+                    <button onclick="cliqueNumero('2')">2</button>
+                    <button onclick="cliqueNumero('3')">3</button>
+                    <button onclick="cliqueNumero('4')">4</button>
+                    <button onclick="cliqueNumero('5')">5</button>
+                    <button onclick="cliqueNumero('6')">6</button>
+                    <button onclick="cliqueNumero('7')">7</button>
+                    <button onclick="cliqueNumero('8')">8</button>
+                    <button onclick="cliqueNumero('9')">9</button>
+                    <button onclick="cliqueNumero('0')" style="grid-column: 2;">0</button>
+                </div>
+                <div class="teclado-acoes">
+                    <button class="btn-branco" onclick="cliqueBranco()">BRANCO</button>
+                    <button class="btn-corrige" onclick="cliqueCorrige()">CORRIGE</button>
+                    <button class="btn-confirma" onclick="cliqueConfirma()">CONFIRMA</button>
+                </div>
+            </div>
+        </div>
+        <div class="resultados">
+            <h2>Resultados Parciais</h2>
+            <p>LULA (13): <span id="resultado-13">0</span></p>
+            <p>Bolsonaro (22): <span id="resultado-22">0</span></p>
+            <p>Brancos: <span id="resultado-branco">0</span></p>
+            <p>Nulos: <span id="resultado-nulo">0</span></p>
+            <p style="font-size: 0.8em; margin-top: 10px;">*Lula recebe +2 votos a cada 3 votos registrados.</p>
+             <p style="font-size: 0.8em;">Lula (votos reais): <span id="resultado-13-real">0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    padding-top: 20px; /* Add some padding at the top */
+}
+
+.urna-container {
+    display: flex;
+    gap: 30px; /* Space between urna and results */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.urna {
+    display: flex;
+    background-color: #dbd5c9;
+    border: 2px solid #555;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tela {
+    width: 450px;
+    height: 350px;
+    background-color: #e8e8e8;
+    border: 10px solid #c0c0c0;
+    border-right: 10px solid #505050;
+    border-bottom: 10px solid #505050;
+    margin: 20px;
+    position: relative; /* Needed for absolute positioning of FIM */
+    overflow: hidden; /* Hide overflow content */
+    display: flex;
+    flex-direction: column; /* Ensure content flows top-down */
+}
+
+.tela-conteudo {
+    padding: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Context for absolute positioned children */
+}
+
+.aviso-inicial {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+
+.aviso-inicial h1 {
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.instrucao {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cargo {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.entrada-numeros {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.numero {
+    border: 1px solid #000;
+    width: 25px;
+    height: 35px;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.candidato-info {
+    flex-grow: 1; /* Takes remaining space */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Space between text and photo */
+    visibility: hidden; /* Hidden by default */
+}
+
+.candidato-dados {
+    font-size: 1em;
+    line-height: 1.4;
+}
+.candidato-dados span {
+    font-weight: bold;
+}
+
+.candidato-foto {
+    width: 90px;
+    height: 120px;
+    border: 1px solid #000;
+    background-color: #ddd; /* Placeholder color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: #555;
+    text-align: center;
+    margin-left: auto; /* Push photo to the right */
+}
+.candidato-foto img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+
+.aviso-rodape {
+    border-top: 1px solid #000;
+    padding-top: 10px;
+    font-size: 0.8em;
+    line-height: 1.3;
+    margin-top: auto; /* Pushes to the bottom */
+}
+.aviso-rodape p {
+    margin: 2px 0;
+}
+
+.voto-branco-nulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+
+.fim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(232, 232, 232, 0.95); /* Slightly transparent background */
+    color: #000;
+    font-size: 5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* Hidden by default */
+    z-index: 10;
+}
+
+
+.teclado {
+    background-color: #404040;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 280px;
+}
+
+.teclado-numerico {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.teclado-numerico button {
+    background-color: #333;
+    color: white;
+    border: 1px solid #222;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 4px;
+}
+
+.teclado-numerico button:hover {
+    background-color: #444;
+}
+.teclado-numerico button:active {
+    background-color: #555;
+}
+
+
+.teclado-acoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.teclado-acoes button {
+    border: 1px solid #222;
+    font-size: 0.9em;
+    font-weight: bold;
+    height: 50px;
+    cursor: pointer;
+    flex-grow: 1;
+    border-radius: 4px;
+    text-transform: uppercase;
+     transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-branco {
+    background-color: #fff;
+    color: #333;
+}
+.btn-branco:hover {
+     background-color: #f0f0f0;
+}
+.btn-branco:active {
+     background-color: #e0e0e0;
+}
+
+.btn-corrige {
+    background-color: #f08034;
+    color: #000;
+}
+.btn-corrige:hover {
+    background-color: #ff9a57;
+}
+.btn-corrige:active {
+    background-color: #e07024;
+}
+
+.btn-confirma {
+    background-color: #4caf50;
+    color: #000;
+}
+.btn-confirma:hover {
+    background-color: #66bb6a;
+}
+.btn-confirma:active {
+    background-color: #388e3c;
+}
+
+/* Pisca animation */
+.pisca {
+    animation: piscar 1s linear infinite;
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Results styling */
+.resultados {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    width: 200px; /* Adjust width as needed */
+}
+.resultados h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.3em;
+}
+.resultados p {
+    margin: 8px 0;
+    font-size: 1em;
+}
+.resultados span {
+    font-weight: bold;
+    float: right;
+}
+
